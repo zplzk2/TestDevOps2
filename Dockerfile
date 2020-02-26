@@ -6,5 +6,5 @@ ENV SRC_DIR=/go/src/github.com/zplzk2/TestDevOps2/
 # Add the source code:
 ADD . $SRC_DIR
 # Build it:
-RUN cd $SRC_DIR; go build -o myapp; cp myapp /app/
+RUN cd $SRC_DIR; go get -v github.com/gorilla/mux; go build -o myapp; cp myapp /app/
 ENTRYPOINT ["./myapp"]
